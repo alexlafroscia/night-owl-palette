@@ -29,6 +29,12 @@
 
         --button-background: <%= it.ui.dark.button.background %>;
         --button-foreground: <%= it.ui.dark.button.foreground %>;
+
+        --tab-border: <%= it.ui.dark.tab.border %>;
+        --tab-inactive-background: <%= it.ui.dark.tab.inactive.background %>;
+        --tab-inactive-foreground: <%= it.ui.dark.tab.inactive.foreground %>;
+        --tab-active-background: <%= it.ui.dark.tab.active.background %>;
+        --tab-active-foreground: <%= it.ui.dark.tab.active.foreground %>;
       }
 
       body.light {
@@ -37,6 +43,12 @@
 
         --button-background: <%= it.ui.light.button.background %>;
         --button-foreground: <%= it.ui.light.button.foreground %>;
+
+        --tab-border: <%= it.ui.light.tab.border %>;
+        --tab-inactive-background: <%= it.ui.light.tab.inactive.background %>;
+        --tab-inactive-foreground: <%= it.ui.light.tab.inactive.foreground %>;
+        --tab-active-background: <%= it.ui.light.tab.active.background %>;
+        --tab-active-foreground: <%= it.ui.light.tab.active.foreground %>;
       }
 
       /* === UI Elements === */
@@ -74,9 +86,36 @@
       }
 
       /* === Demo Components === */
+
       button {
         background: var(--button-background);
         color: var(--button-foreground);
+      }
+
+      .tab-group {
+        border: 0;
+        border-bottom: 1px;
+        border-color: var(--tab-border);
+        border-style: solid;
+
+        display: flex;
+      }
+
+      .tab {
+        padding: 0.5em 1em;
+        text-decoration: none;
+
+        border: 0;
+        border-right: 1px;
+        border-color: var(--tab-border);
+        border-style: solid;
+
+        background: var(--tab-inactive-background);
+        color: var(--tab-inactive-foreground);
+      }
+      .tab.active {
+        background: var(--tab-active-background);
+        color: var(--tab-active-foreground);
       }
     </style>
   </head>
@@ -133,7 +172,18 @@
     <section>
       <h2>UI Elements</h2>
 
+      <h3>Button</h3>
+
       <button>Click Me!</button>
+
+      <h3>Tabs</h3>
+
+      <div class="tab-group">
+        <a href="#" class="tab">First</a>
+        <a href="#" class="tab active">Second</a>
+        <a href="#" class="tab">Third</a>
+        <a href="#" class="tab">Fourth</a>
+      </div>
     </section>
   </body>
 
