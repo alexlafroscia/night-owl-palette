@@ -9,7 +9,7 @@ projects.
 
 ## Credits
 
-- [Sarah Drasner](https://github.com/sdras) for creating the arwesome
+- [Sarah Drasner](https://github.com/sdras) for creating the awesome
   [Night Owl VSCode Theme][night-owl]
 
 [night-owl]: https://github.com/sdras/night-owl-vscode-theme
