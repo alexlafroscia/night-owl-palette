@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev": "deno serve --allow-read=./preview --watch preview/server.ts"
+    "dev": "deno serve --allow-read=./preview --watch preview/server.ts",
+    "preview:build": "deno run --allow-read=./preview --allow-write=./public preview/build.ts"
   },
   "imports": {
     "eta": "npm:eta@^3.4.0"
