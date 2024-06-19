@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --black: <%= it.color.normal.black %>;
+        --white: <%= it.color.normal.white %>;
+        --blue: <%= it.color.normal.blue %>;
+        --cyan: <%= it.color.normal.cyan %>;
+        --green: <%= it.color.normal.green %>;
+        --magenta: <%= it.color.normal.magenta %>;
+        --red: <%= it.color.normal.red %>;
+        --yellow: <%= it.color.normal.yellow %>;
+
+        --bright-black: <%= it.color.bright.black %>;
+        --bright-white: <%= it.color.bright.white %>;
+        --bright-blue: <%= it.color.bright.blue %>;
+        --bright-cyan: <%= it.color.bright.cyan %>;
+        --bright-green: <%= it.color.bright.green %>;
+        --bright-magenta: <%= it.color.bright.magenta %>;
+        --bright-red: <%= it.color.bright.red %>;
+        --bright-yellow: <%= it.color.bright.yellow %>;
+      }
+
+      table {
+        display: grid;
+        grid-template-columns: auto repeat(8, 1fr);
+        gap: 2px;
+        width: 100%;
+      }
+
+      thead,
+      tbody,
+      tr {
+        display: contents;
+      }
+
+      tbody td {
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Black</th>
+          <th>White</th>
+          <th>Blue</th>
+          <th>Cyan</th>
+          <th>Green</th>
+          <th>Magenta</th>
+          <th>Red</th>
+          <th>Yellow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Normal</td>
+          <td style="background: var(--black)"></td>
+          <td style="background: var(--white)"></td>
+          <td style="background: var(--blue)"></td>
+          <td style="background: var(--cyan)"></td>
+          <td style="background: var(--green)"></td>
+          <td style="background: var(--magenta)"></td>
+          <td style="background: var(--red)"></td>
+          <td style="background: var(--yellow)"></td>
+        </tr>
+        <tr>
+          <td>Bright</td>
+          <td style="background: var(--bright-black)"></td>
+          <td style="background: var(--bright-white)"></td>
+          <td style="background: var(--bright-blue)"></td>
+          <td style="background: var(--bright-cyan)"></td>
+          <td style="background: var(--bright-green)"></td>
+          <td style="background: var(--bright-magenta)"></td>
+          <td style="background: var(--bright-red)"></td>
+          <td style="background: var(--bright-yellow)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

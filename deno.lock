@@ -1,0 +1,19 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:eta@^3.4.0": "npm:eta@3.4.0"
+    },
+    "npm": {
+      "eta@3.4.0": {
+        "integrity": "sha512-tCsc7WXTjrTx4ZjYLplcqrI3o4mYJ+Z6YspeuGL8tbt/hHoMchwBwtKfwM09svEY86iRapY93vUqQttcNuIO5Q==",
+        "dependencies": {}
+      }
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:eta@^3.4.0"
+    ]
+  }
+}
