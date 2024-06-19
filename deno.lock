@@ -11,6 +11,9 @@
       }
     }
   },
+  "remote": {
+    "https://deno.land/std@0.224.0/testing/types.ts": "36e519e8735884ce60ddd284195a28f6d22f83d3effe5df0ce27bafc17b5655d"
+  },
   "workspace": {
     "dependencies": [
       "npm:eta@^3.4.0"

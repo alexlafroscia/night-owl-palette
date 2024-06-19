@@ -2,6 +2,7 @@
 <html>
   <head>
     <style>
+      /* === Variable Definitions === */
       :root {
         --black: <%= it.color.normal.black %>;
         --white: <%= it.color.normal.white %>;
@@ -22,6 +23,39 @@
         --bright-yellow: <%= it.color.bright.yellow %>;
       }
 
+      :root {
+        --background: <%= it.ui.dark.background %>;
+        --foreground: <%= it.ui.dark.foreground %>;
+
+        --button-background: <%= it.ui.dark.button.background %>;
+        --button-foreground: <%= it.ui.dark.button.foreground %>;
+      }
+
+      body.light {
+        --background: <%= it.ui.light.background %>;
+        --foreground: <%= it.ui.light.foreground %>;
+
+        --button-background: <%= it.ui.light.button.background %>;
+        --button-foreground: <%= it.ui.light.button.foreground %>;
+      }
+
+      /* === UI Elements === */
+
+      body {
+        background: var(--background);
+        color: var(--foreground);
+
+        font-family: sans-serif;
+      }
+
+      section + section {
+        margin-top: 3em;
+        border: 0;
+        border-top: 1px;
+        border-color: var(--foreground);
+        border-style: solid;
+      }
+
       table {
         display: grid;
         grid-template-columns: auto repeat(8, 1fr);
@@ -38,47 +72,74 @@
       tbody td {
         height: 30px;
       }
+
+      /* === Demo Components === */
+      button {
+        background: var(--button-background);
+        color: var(--button-foreground);
+      }
     </style>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Black</th>
-          <th>White</th>
-          <th>Blue</th>
-          <th>Cyan</th>
-          <th>Green</th>
-          <th>Magenta</th>
-          <th>Red</th>
-          <th>Yellow</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Normal</td>
-          <td style="background: var(--black)"></td>
-          <td style="background: var(--white)"></td>
-          <td style="background: var(--blue)"></td>
-          <td style="background: var(--cyan)"></td>
-          <td style="background: var(--green)"></td>
-          <td style="background: var(--magenta)"></td>
-          <td style="background: var(--red)"></td>
-          <td style="background: var(--yellow)"></td>
-        </tr>
-        <tr>
-          <td>Bright</td>
-          <td style="background: var(--bright-black)"></td>
-          <td style="background: var(--bright-white)"></td>
-          <td style="background: var(--bright-blue)"></td>
-          <td style="background: var(--bright-cyan)"></td>
-          <td style="background: var(--bright-green)"></td>
-          <td style="background: var(--bright-magenta)"></td>
-          <td style="background: var(--bright-red)"></td>
-          <td style="background: var(--bright-yellow)"></td>
-        </tr>
-      </tbody>
-    </table>
+    <label>
+      <input type="checkbox" id="lightmode" />
+      Light Mode
+    </label>
+
+    <section>
+      <h2>Colors</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Black</th>
+            <th>White</th>
+            <th>Blue</th>
+            <th>Cyan</th>
+            <th>Green</th>
+            <th>Magenta</th>
+            <th>Red</th>
+            <th>Yellow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Normal</td>
+            <td style="background: var(--black)"></td>
+            <td style="background: var(--white)"></td>
+            <td style="background: var(--blue)"></td>
+            <td style="background: var(--cyan)"></td>
+            <td style="background: var(--green)"></td>
+            <td style="background: var(--magenta)"></td>
+            <td style="background: var(--red)"></td>
+            <td style="background: var(--yellow)"></td>
+          </tr>
+          <tr>
+            <td>Bright</td>
+            <td style="background: var(--bright-black)"></td>
+            <td style="background: var(--bright-white)"></td>
+            <td style="background: var(--bright-blue)"></td>
+            <td style="background: var(--bright-cyan)"></td>
+            <td style="background: var(--bright-green)"></td>
+            <td style="background: var(--bright-magenta)"></td>
+            <td style="background: var(--bright-red)"></td>
+            <td style="background: var(--bright-yellow)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>UI Elements</h2>
+
+      <button>Click Me!</button>
+    </section>
   </body>
+
+  <script>
+    lightmode.addEventListener("change", () => {
+      document.body.classList.toggle("light");
+    });
+  </script>
 </html>

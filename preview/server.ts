@@ -1,5 +1,5 @@
 import { Eta } from "eta";
-import { color } from "../mod.ts";
+import { color, ui } from "../mod.ts";
 
 const eta = new Eta({ views: import.meta.dirname });
 
@@ -8,6 +8,7 @@ export default {
     new Response(
       eta.render("./index.html", {
         color,
+        ui,
       }),
       {
         headers: {
